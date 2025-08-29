@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Логічні математичні приклади — Привітання</title>
+  <link rel="stylesheet" href="/math-greeting-site/style.css" />
+</head>
+<body>
+  
+  <div class="bg"></div>
+  <header class="header">
+    <h1>🎓 Логічні задачі🎓 </h1>
+    <p>Розв'яжіть усі приклади — і отримаєте сюрприз 🎉</p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="quiz-card">
+      <div class="card-head">
+        <h2>Математичний челендж</h2>
+        <div class="progress"><div class="bar" id="progress-bar" style="width:0%"></div></div>
+      </div>
+
+      <form id="quiz-form" class="grid"></form>
+
+      <div class="actions">
+        <button id="check-btn" class="btn" disabled>Перевірити відповіді</button>
+        <button id="reset-btn" class="btn ghost">Скинути</button>
+      </div>
+      <p id="helper" class="helper">Порада: уважно з дужками та пріоритетом операцій 😉</p>
+    </section>
+  </main>
+
+  <!-- Celebration Modal -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" id="close-modal" aria-label="Закрити">×</button>
+      <div class="icon-wrap">
+        <!-- Simple SVG cake icon -->
+        <svg class="cake" viewBox="0 0 128 128" aria-hidden="true">
+          <path d="M64 12c6 0 10 4 10 10s-8 10-10 18c-2-8-10-12-10-18s4-10 10-10z"></path>
+          <rect x="20" y="56" width="88" height="28" rx="6" ry="6"></rect>
+          <rect x="12" y="84" width="104" height="28" rx="8" ry="8"></rect>
+          <path d="M20 70c8 0 8 6 16 6s8-6 16-6 8 6 16 6 8-6 16-6 8 6 16 6" fill="none" stroke-width="4" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <h3>З Днем народження!</h3>
+      <p>Бажаю здоров'я, натхнення та радості у житті! 💻✨</p>
+      <button class="btn" id="yay">Дякую!</button>
+      <a href="https://t.me/ttzeus_bot" target="_blank" class="gift-btn">
+  🎁 Отримати ще подарунок
+</a>
+
+    </div>
+  </div>
+
+  <!-- Confetti canvas -->
+  <canvas id="confetti"></canvas>
+
+  <footer class="footer">
+    <small>Зроблено з повагою ✨</small>
+  </footer>
+
+  <script src="/math-greeting-site/app.js"></script>
+</body>
+</html>

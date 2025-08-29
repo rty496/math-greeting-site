@@ -1,0 +1,159 @@
+/* =====================
+   Global styles & theme
+   ===================== */
+:root{
+  --bg1:#0f2027;
+  --bg2:#203a43;
+  --bg3:#2c5364;
+  --accent:#7ef6c2;
+  --accent-2:#ffd166;
+  --text:#e8f6ff;
+  --muted:#a9c4d4;
+  --glass: rgba(255,255,255,.12);
+  --shadow: 0 20px 40px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  overflow-x:hidden;
+}
+
+.bg{
+  position:fixed; inset:0;
+  background: radial-gradient(60vw 60vh at 80% 10%, #1a2a6c 0, transparent 60%),
+              radial-gradient(50vw 50vh at 10% 100%, #b21f1f 0, transparent 60%),
+              linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+  filter: saturate(1.1) contrast(1.05);
+  z-index:-2;
+}
+
+.header{
+  text-align:center;
+  padding: 42px 16px 8px;
+}
+.header h1{margin:0 0 6px; font-size: clamp(24px, 3.4vw, 44px); letter-spacing:.4px}
+.header p{margin:0; color:var(--muted)}
+
+.container{max-width:920px; margin:20px auto 80px; padding:16px}
+
+.card{
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.card-head{display:flex; gap:18px; align-items:center; justify-content:space-between; margin-bottom:18px}
+.card-head h2{margin:0; font-size: clamp(18px, 2.4vw, 28px)}
+.progress{flex:1; height:10px; background: rgba(255,255,255,.12); border-radius:999px; overflow:hidden}
+.progress .bar{height:100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); width:0%}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+}
+
+.item{
+  padding:16px;
+  border-radius: 14px;
+  border:1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  transition:.2s transform ease, .2s box-shadow ease;
+}
+.item:hover{ transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25)}
+
+.q{font-weight:600; margin:0 0 10px}
+.input{
+  display:flex; align-items:center; gap:10px;
+  background: rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.14);
+  padding:10px 12px;
+  border-radius:12px;
+}
+.input input{
+  flex:1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size:16px;
+}
+.hint{font-size:12px; color:var(--muted); margin-top:8px}
+
+.actions{display:flex; gap:12px; justify-content:flex-end; margin-top:18px}
+.btn{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color:#102a43;
+  border:none;
+  padding:12px 18px;
+  font-weight:700;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow: 0 10px 18px rgba(0,0,0,.25);
+  transition: transform .06s ease;
+}
+.btn:active{ transform: translateY(1px)}
+.btn[disabled]{opacity:.6; cursor:not-allowed; filter:grayscale(.3)}
+.btn.ghost{
+  background: transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.24);
+}
+
+.helper{color:var(--muted); margin:12px 0 0}
+
+/* Modal */
+.modal{ position: fixed; inset:0; display:grid; place-items:center; background: rgba(0,0,0,.55); z-index:20}
+.modal.hidden{ display:none}
+.modal-card{
+  width:min(560px, 92vw);
+  background: #0c1220;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:22px;
+  padding:28px;
+  text-align:center;
+  position:relative;
+  box-shadow: var(--shadow);
+}
+.modal-card h3{font-size: clamp(22px, 3vw, 28px); margin: 12px 0 6px}
+.modal-card p{color:var(--muted); margin:0 0 16px}
+.close{
+  position:absolute; right:10px; top:6px; font-size:26px; background:transparent; color:var(--text);
+  border:none; cursor:pointer; opacity:.8
+}
+
+.icon-wrap{display:grid; place-items:center; margin:10px 0}
+.cake{width:120px; height:120px; fill: var(--accent-2); stroke: var(--accent); filter: drop-shadow(0 10px 20px rgba(0,0,0,.5))}
+
+/* Confetti canvas covers screen */
+#confetti{ position: fixed; inset:0; pointer-events:none; z-index: 25}
+
+.footer{ text-align:center; color:var(--muted); margin: 24px 0 40px}
+
+
+.gift-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff6b6b, #f06595, #845ef7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gift-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
